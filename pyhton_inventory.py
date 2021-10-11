@@ -45,7 +45,6 @@ class ExampleInventory(object):
             if groupName not in self.inventory:
                 self.inventory[groupName] = dict()
                 self.inventory[groupName]['hosts'] = list()
-                self.inventory[groupName]['vars'] = {}
 
             self.inventory[groupName]['hosts'].append(ipAddress)
 
