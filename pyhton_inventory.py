@@ -44,6 +44,7 @@ class ExampleInventory(object):
 
             if groupName not in self.inventory:
                 self.inventory[groupName] = dict()
+                self.inventory[groupName]['vars'] = {"ansible_connection": "local", "ansible_python_interpreter": "{{ ansible_playbook_python }}"}
                 self.inventory[groupName]['hosts'] = list()
 
             self.inventory[groupName]['hosts'].append(ipAddress)
