@@ -33,9 +33,12 @@ class ExampleInventory(object):
     # Example inventory for testing.
     def example_inventory(self):
 
+        username = os.environ["DB_USERNAME"]
+        password = os.environ["DB_PASSWORD"]
+
         con = psycopg2.connect(database="test_inventory", 
-                            user="postgres", 
-                            password="testpassword", 
+                            user=username, 
+                            password=password, 
                             host="192.168.49.2", port="30008")
 
         cur = con.cursor(cursor_factory=psycopg2.extras.DictCursor)
