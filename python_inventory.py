@@ -33,7 +33,11 @@ class ExampleInventory(object):
     # Example inventory for testing.
     def example_inventory(self):
 
-        con = psycopg2.connect(database="test_inventory", user="postgres", password="testpassword", host="192.168.49.2", port="30008")
+        con = psycopg2.connect(database="test_inventory", 
+                            user="postgres", 
+                            password="testpassword", 
+                            host="192.168.49.2", 
+                            port="30008")
 
         cur = con.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute("SELECT * from hosts")
